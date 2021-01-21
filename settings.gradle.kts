@@ -1,1 +1,4 @@
-rootProject.name = "lombok_swagger_plugin"
+rootProject.name = "LombokSwaggerPlugin"
+pluginManagement{
+
+}

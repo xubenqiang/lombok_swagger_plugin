@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.xubenqiang.lombokswaggerplugin</id>
-    <name>lombok_swagger_plugin</name>
+    <name>LombokSwaggerPlugin</name>
     <vendor>xubenqiang</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -16,4 +16,46 @@
         <listener class="com.github.xubenqiang.lombokswaggerplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.ConfigAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.ConfigAction"
+                text="Lombok Plugin Configuration" description="Configuration lombok plugin">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+        </action>
+
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.LombokAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.LombokAction" text="Lombok Helper"
+                description="This is lombok swagger configuration action">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.SwaggerAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.SwaggerAction" text="Swagger Helper"
+                description="This is swagger configuration action" >
+        <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.CrudForControllerAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.CrudForControllerAction"
+                text="Create CRUD" description="Create quickly CRUD methods for class" >
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.DBAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.DBAction" text="DB Helper"
+                description="Fast add @Param; @QueryByNamed ; @PageIndex ; @PageSize to element">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.Vo2DTOAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.Vo2DTOAction" text="VO2DTO"
+                description="Vo convert To DTO">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+        <action id="com.github.xubenqiang.lombokswaggerplugin.actions.CopyAndCreateExtCtrlAction"
+                class="com.github.xubenqiang.lombokswaggerplugin.actions.CopyAndCreateExtCtrlAction" text="DB2Ext"
+                description="Copy DB methods To ExtCtrl">
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>

@@ -42,9 +42,12 @@ version = pluginVersion
 repositories {
     mavenCentral()
     jcenter()
+
 }
+
 dependencies {
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.14.2")
+
 }
 
 // Configure gradle-intellij-plugin plugin.
@@ -71,6 +74,12 @@ detekt {
         xml.enabled = false
         txt.enabled = false
     }
+}
+
+tasks.runIde {
+    jvmArgs("--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
+    //jvmArgs("--add-opens","java.base/java.lang=ALL-UNNAMED")
+    //jvmArgs("--illegal-access=deny")
 }
 
 tasks {
