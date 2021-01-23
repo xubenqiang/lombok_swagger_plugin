@@ -325,11 +325,11 @@ class SwaggerAction : AnAction() {
                 psiClass.implementsList?.add(ref)
             }
 
-            // 添加 @ApiModel 注解
+            // 将 @ApiModel 添加在注释后
             if(!psiClass.hasAnnotation(ConfigAction.ApiModelWithoutPrefix)){
                 val text = "@ApiModel"
                 val apiModelAnnotation = createAnnotationFor(project,psiClass,text)
-                psiClass.addBefore(apiModelAnnotation,apiModelAnnotation)
+                psiClass.addAfter(apiModelAnnotation, psiClass.docComment)
             }
 
             // @ApiModelProperty 注解
